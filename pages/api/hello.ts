@@ -1,14 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 export const runtime = 'edge';
-import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  name: string
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+export default async function handler(req: Request): Promise<Response> {
+  return new Response(JSON.stringify({ message: 'Hello from Edge Runtime!' }), {
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
