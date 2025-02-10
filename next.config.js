@@ -1,8 +1,10 @@
-const { withNextOnPages } = require("@cloudflare/next-on-pages");
 
-module.exports = withNextOnPages({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true, // If using Next.js 13+ with App Router
+    appDir: true,
   },
-});
+};
+
+module.exports = nextConfig;
